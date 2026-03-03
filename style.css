@@ -1,0 +1,118 @@
+body {
+    font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    background-color:ivory;
+    color: navy;
+}
+
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase; 
+    line-height: 0px; 
+    padding: 30px;  
+    color: ivory;   
+    background-color: navy;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.nav-horizontal {
+    font-size: 20px;
+    text-transform: uppercase;   
+    line-height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    border-width: 2px;
+}
+
+.nav-horizontal ul li a:active{ 
+    color: ivory;
+    text-decoration: none; 
+    padding: 10px 10px;
+    display: block;
+}
+    
+
+
+.disciplines a{
+    color: navy;
+}
+
+.Movements a{
+    color: navy;
+}
+
+
+
+.main-container {
+    max-height: 500px;
+    min-height: 500px;
+  display: flex;
+  gap: 20px;
+}
+
+.artists {
+  width: 50%;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+.artworks {
+  width: 50%;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+*/
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.artist summary {
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+.artist p {
+  font-size: 20px;
+  padding: 0.5rem 0 1rem;
+  color: navy;}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+#artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    gap: 15px;
+}
+
+#artwork-grid img {
+    width: 300px;
+    height: auto;
+    /*display: block;
+    object-fit: cover; */
+
+}
+
+.divider {
+    border-top: 1px solid navy 
+}
+.divider1 {
+    border-top: 500px solid navy 
+    
+}
