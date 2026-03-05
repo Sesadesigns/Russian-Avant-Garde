@@ -9,7 +9,7 @@ const allDetails = document.querySelectorAll(".artist details");
         link.addEventListener("click", e => { 
             e.preventDefault();
 
-    const selectedMovement = link.dataset.movements.toLowerCase();
+    const selectedMovement = (link.dataset.movements || "").toLowerCase();
        
     artworks.forEach(img => { 
         const movements = img.dataset.movement 
@@ -19,7 +19,9 @@ const allDetails = document.querySelectorAll(".artist details");
         img.style.display = 
         movements.includes(selectedMovement) ? "block" : "none"; });
         
-        artists.forEach(artist => { const movements = artist.dataset.movement .toLowerCase() .split(" ");
+        artists.forEach(artist => { const movements = artist.dataset.movement 
+            .toLowerCase() 
+            .split(" ");
             if (movements.includes(selectedMovement)) { 
                 artist.style.display = "block"; 
             } else { 
