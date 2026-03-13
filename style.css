@@ -3,6 +3,8 @@ body {
 
     background-color:ivory;
     color: navy;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 
@@ -28,23 +30,28 @@ h2 {
     justify-content: space-around;
     list-style-type: none;
     border-width: 2px;
+    padding: 10px 10px;
+
 }
 
-.nav-horizontal ul li a:active{ 
+.nav-horizontal a:hover {
+    background-color: navy;
     color: ivory;
-    text-decoration: none; 
-    padding: 10px 10px;
-    display: block;
+    padding: 10px 10x;
 }
-    
+
+
+
 
 
 .disciplines a{
     color: navy;
+    list-style-type: none;
 }
 
 .Movements a{
     color: navy;
+    list-style-type: none;
 }
 
 
@@ -83,6 +90,7 @@ details summary::-webkit-details-marker {
   font-weight: 600;
   padding: 10px 0;
   text-transform: uppercase;
+  list-style-type: none;
 }
 
 .artist p {

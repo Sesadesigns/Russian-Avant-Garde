@@ -32,20 +32,19 @@ const allDetails = document.querySelectorAll(".artist details");
             const selectedDiscipline = link.dataset.disciplines.toLowerCase();
                 
         
-            artworks.forEach(img => { 
-                const disciplines = img.dataset.discipline 
-                .toLowerCase() 
-                .split(" ");
+     artworks.forEach(img => { 
+        const disciplines = img.dataset.discipline 
+            .toLowerCase() 
+            .split(" ");
 
-            img.style.display = disciplines.includes(selectedDiscipline) 
-                ? "block" : "none"; 
-            });
+        img.style.display = 
+        disciplines.includes(selectedDiscipline) ? "block" : "none";   });
             
-            artists.forEach(artist => {        
-                const movements = artist.dataset.movement 
-                .toLowerCase() .split(" ");
+        artists.forEach(artist => {        
+             const disciplines = artist.dataset.discipline 
+            .toLowerCase() .split(" ");
                     
-                if (movements.includes(selectedMovement)) { 
+                if (disciplines.includes(selectedDiscipline)) { 
                     artist.style.display = "block"; 
                 } else { 
                     artist.style.display = "none"; 
