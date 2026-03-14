@@ -1,6 +1,12 @@
+html, body {
+height: 100%;
+margin: 0;
+}
+
 body {
     font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    display: flex;
+    flex-direction: column;
     background-color:ivory;
     color: navy;
     text-decoration: none;
@@ -8,42 +14,79 @@ body {
 }
 
 
-h1 {
-    font-size: 50px;
-    text-transform: uppercase; 
+header {
     line-height: 0px; 
-    padding: 30px;  
+    padding: 0px;  
+    display: block;
+    flex-shrink: inherit;
     color: ivory;   
     background-color: navy;
 }
+h1{
+   text-transform: uppercase;  
+    color: ivory;   
+    background-color: navy;
+    font-size: clamp(30px, 5vw, 50px);
+}
 
-h2 {
-    font-size: 30px;
+
+
+.nav-horizontal {
+    font-size: clamp(8px, 2vw, 20px);
+    text-transform: uppercase;   
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    border-width: 2px;
+    padding: 5px 0px;
+    white-space: nowrap;
 }
 
 .nav-horizontal {
-    font-size: 20px;
-    text-transform: uppercase;   
-    line-height: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style-type: none;
-    border-width: 2px;
-    padding: 10px 10px;
-
 }
 
-.nav-horizontal a:hover {
+.nav-horizontal li {
+    border-right: 1px solid navy;
+    flex: 1;
+}
+
+.nav-horizontal li:last-child {
+    border-right: none;
+}
+
+.nav-horizontal li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: navy;
+    text-align: center;
+}
+
+.nav-horizontal li a:hover {
     background-color: navy;
     color: ivory;
-    padding: 10px 10x;
 }
 
-
-
-
-
+.nav-horizontal li a:hover {
+    background-color: navy;
+    color: ivory;
+}
+.nav-horizontal li a.active {
+    background-color: navy;
+    color: ivory;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 .disciplines a{
     color: navy;
     list-style-type: none;
@@ -57,20 +100,20 @@ h2 {
 
 
 .main-container {
-    max-height: 500px;
-    min-height: 500px;
-  display: flex;
-  gap: 20px;
+display: flex;
+gap: 10px;
+padding: 5px;
+flex: 1;
 }
 
 .artists {
   width: 50%;
-  max-height: 65vh;
+  max-height: 610px;
   overflow-y: auto;
 }
 .artworks {
   width: 50%;
-  max-height: 65vh;
+  max-height: 610px;
   overflow-y: auto;
 }
 
@@ -103,14 +146,13 @@ details summary::-webkit-details-marker {
 }
 
 #artwork-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
-    gap: 15px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
 }
 
 #artwork-grid img {
-    width: 300px;
+    width: 100%;
     height: auto;
     
 
@@ -120,6 +162,6 @@ details summary::-webkit-details-marker {
     border-top: 1px solid navy 
 }
 .divider1 {
-    border-top: 500px solid navy 
+    border-top: 1px solid navy 
     
 }
