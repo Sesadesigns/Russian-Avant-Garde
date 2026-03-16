@@ -6,10 +6,13 @@ const artworks = document.querySelectorAll(".artwork");
 const allDetails = document.querySelectorAll(".artist details");
     
     navLinks.forEach(link => { 
-        link.addEventListener("click", e => { 
-            e.preventDefault();
+    link.addEventListener("click", e => { 
+        e.preventDefault();
 
-    const selectedMovement = (link.dataset.movements || "").toLowerCase();
+        navLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        const selectedMovement = (link.dataset.movements || "").toLowerCase();
        
     artworks.forEach(img => { 
         const movements = img.dataset.movement 
@@ -68,4 +71,3 @@ const allDetails = document.querySelectorAll(".artist details");
         }); 
     }); 
 })); 
-artworks.forEach(img => details.open = false);
