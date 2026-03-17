@@ -65,25 +65,4 @@ document.addEventListener("DOMContentLoaded", () => {
       const artistId = summary.closest(".artist").dataset.artist;
       const isActive = summary.classList.contains("active");
       summaries.forEach(s => s.classList.remove("active"));
-      topLinks.forEach(l => l.classList.remove("active"));
-      bottomLinks.forEach(l => l.classList.remove("active"));
-      if (isActive) {
-        resetAll();
-      } else {
-        summary.classList.add("active");
-        filterByArtist(artistId);
-      }
-    });
-  });
-
-  allDetails.forEach(details => {
-    details.addEventListener("toggle", () => {
-      if (details.open) {
-        allDetails.forEach(other => {
-          if (other !== details) other.open = false;
-        });
-      }
-    });
-  });
-
-});
+      topLinks.forEach(l => l.c
