@@ -28,15 +28,20 @@
   </footer>
 <script>
   function updateHeights() {
-    const header = document.querySelector('header').offsetHeight;
-    const topNav = document.querySelector('.nav-top').offsetHeight;
-    const bottomNav = document.querySelector('.nav-bottom').offsetHeight;
-    const total = header + topNav + bottomNav;
+    const header = document.querySelector('header');
+    const topNav = document.querySelector('.nav-top');
+    const bottomNav = document.querySelector('.nav-bottom');
+    
+    const headerH = header ? header.offsetHeight : 0;
+    const topNavH = topNav ? topNav.offsetHeight : 0;
+    const bottomNavH = bottomNav ? bottomNav.offsetHeight : 0;
+    
+    const total = headerH + topNavH + bottomNavH;
     document.documentElement.style.setProperty('--ui-height', total + 'px');
   }
 
-  updateHeights(); // run on load
-  window.addEventListener('resize', updateHeights); // run on every resize
+  updateHeights();
+  window.addEventListener('resize', updateHeights);
 </script>
 </body>
 
