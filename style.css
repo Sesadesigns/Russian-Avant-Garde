@@ -116,7 +116,7 @@ h1{
 
   .artist summary {
     cursor: pointer;
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: clamp(15px, 3vw, 16px);
     font-weight: 600;
     padding: 10px 0;
     text-transform: uppercase;
@@ -124,21 +124,21 @@ h1{
   }
 
   .artist p {
-    font-size: clamp(12px, 3vw, 15px);
-    padding: 0.5rem 0 1rem;
+    font-size: clamp(13px, 3vw, 15px);
+    padding: 10px 0px;
     color: navy;
   }
 
   .artists {
     width: 100%;
-    height: calc((100vh - var(--ui-height)) / 2);
-    max-height: calc((100vh - var(--ui-height)) / 2);
+    height: calc((150vh - var(--ui-height)) / 2);
+    max-height: calc((150vh - var(--ui-height)) / 2);
   }
 
   .artworks {
     width: 100%;
-    height: calc((100vh - var(--ui-height)) / 2);
-    max-height: calc((100vh - var(--ui-height)) / 2);
+    height: calc((150vh - var(--ui-height)) / 2);
+    max-height: calc((150vh - var(--ui-height)) / 2);
   }
   .main-container {
     flex-direction: column;
@@ -148,15 +148,15 @@ h1{
 }
 
 .nav-horizontal {
-    font-size: clamp(5px, 1.5vw, 20px);
+    font-size: clamp(12px, 1.5vw, 20px);
     text-transform: uppercase;   
-    line-height: 10px;
+    line-height: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
     border-width: 2px;
-    padding: 5px 0px;
+    padding: 10px 0px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -174,8 +174,9 @@ h1{
 
 .nav-horizontal li a {
     display: block;
-    padding: 20px 5px;
+    padding: 15px 5px;
     text-decoration: none;
+    line-height: 10px;
     color: navy;
     text-align: center;
 }
@@ -246,7 +247,7 @@ details summary::-webkit-details-marker {
 
 .artist summary {
   cursor: pointer;
-  font-size: clamp(11px, 2.5vw, 30px);
+  font-size: clamp(16px, 2.5vw, 30px);
   font-weight: 600;
   padding: 5px 0;
   text-transform: uppercase;
@@ -254,8 +255,8 @@ details summary::-webkit-details-marker {
 }
 
 .artist p {
-font-size: clamp(10px, 1.8vw, 20px);
-  padding: 0.5rem 0 1rem;
+font-size: clamp(12px, 1.8vw, 20px);
+  padding: 0px 0px;
   color: navy;}
 
 details summary::-webkit-details-marker {
