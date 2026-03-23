@@ -112,11 +112,26 @@ h1{
   .nav-bottom li {
     flex: 1 1 14%;
   }
-
+  
   .main-container {
     flex-direction: column;
     height: calc(100vh - var(--ui-height));
     overflow: hidden;
+  }
+  
+  .artist summary {
+    cursor: pointer;
+    font-size: clamp(12px, 3vw, 16px);
+    font-weight: 600;
+    padding: 10px 0;
+    text-transform: uppercase;
+    list-style-type: none;
+  }
+
+  .artist p {
+    font-size: clamp(12px, 3vw, 15px);
+    padding: 0.5rem 0 1rem;
+    color: navy;
   }
 
   .artists {
