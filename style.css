@@ -113,12 +113,7 @@ h1{
     flex: 1 1 14%;
   }
   
-  .main-container {
-    flex-direction: column;
-    height: calc(100vh - var(--ui-height));
-    overflow: hidden;
-  }
-  
+
   .artist summary {
     cursor: pointer;
     font-size: clamp(12px, 3vw, 16px);
@@ -144,6 +139,11 @@ h1{
     width: 100%;
     height: calc((100vh - var(--ui-height)) / 2);
     max-height: calc((100vh - var(--ui-height)) / 2);
+  }
+  .main-container {
+    flex-direction: column;
+    height: 600px;
+    overflow: none;
   }
 }
 
@@ -246,15 +246,15 @@ details summary::-webkit-details-marker {
 
 .artist summary {
   cursor: pointer;
-  font-size: 30px;
+  font-size: clamp(11px, 2.5vw, 30px);
   font-weight: 600;
-  padding: 10px 0;
+  padding: 5px 0;
   text-transform: uppercase;
   list-style-type: none;
 }
 
 .artist p {
-  font-size: 20px;
+font-size: clamp(10px, 1.8vw, 20px);
   padding: 0.5rem 0 1rem;
   color: navy;}
 
