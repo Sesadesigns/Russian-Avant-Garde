@@ -272,7 +272,7 @@ details summary::-webkit-details-marker {
 
 #artwork-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 gap: 15px;
 padding: 5px;
 }
