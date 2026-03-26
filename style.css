@@ -128,21 +128,25 @@ h1{
     padding: 10px 0px;
     color: navy;
   }
-
+  /*
   .artists {
     width: 100%;
-    height: calc((150vh - var(--ui-height)) / 2);
-    max-height: calc((150vh - var(--ui-height)) / 2);
+    height: calc((100vh - var(--ui-height)) * 0.4);
+  max-height: calc((100vh - var(--ui-height)) * 0.4);
   }
+  */
   
   .artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /*
   .artworks {
     width: 100%;
-    height: calc((150vh - var(--ui-height)) / 2);
-    max-height: calc((150vh - var(--ui-height)) / 2);
+    height: calc((100vh - var(--ui-height)) * 0.6);
+  max-height: calc((100vh - var(--ui-height)) * 0.6);
   }
+  */
   .main-container {
     flex-direction: column;
     height: 600px;
@@ -297,13 +301,13 @@ padding: 5px;
 
   .artists {
     width: 100%;
-    height: calc((100vh - var(--ui-height)) / 2);
-    max-height: calc((100vh - var(--ui-height)) / 2);
+    height: calc((100vh - var(--ui-height)) * 0.4);
+  max-height: calc((100vh - var(--ui-height)) * 0.4);
   }
 
   .artworks {
     width: 100%;
-    height: calc((100vh - var(--ui-height)) / 2);
-    max-height: calc((100vh - var(--ui-height)) / 2);
+    height: calc((100vh - var(--ui-height)) * 0.6);
+  max-height: calc((100vh - var(--ui-height)) * 0.6);
   }
 }
