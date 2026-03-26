@@ -134,7 +134,10 @@ h1{
     height: calc((150vh - var(--ui-height)) / 2);
     max-height: calc((150vh - var(--ui-height)) / 2);
   }
-
+  
+  .artwork-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .artworks {
     width: 100%;
     height: calc((150vh - var(--ui-height)) / 2);
@@ -265,8 +268,9 @@ details summary::-webkit-details-marker {
 
 #artwork-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 gap: 15px;
+padding: 5px;
 }
 
 #artwork-grid img {
