@@ -6,6 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const bottomLinks = document.querySelectorAll(".nav-bottom a");
   const summaries = document.querySelectorAll(".artist summary");
 
+  let activeFilter = null; 
+
+
+  document.querySelector("h1").addEventListener("click", () => {
+  activeFilter = null;
+  resetAll();
+  topLinks.forEach(l => l.classList.remove("active"));
+  bottomLinks.forEach(l => l.classList.remove("active"));
+  summaries.forEach(s => s.classList.remove("active"));
+  allDetails.forEach(d => d.open = false);
+});
+
   function resetAll() {
     artworks.forEach(img => img.style.display = "block");
     artists.forEach(a => a.style.display = "block");
@@ -35,10 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
       topLinks.forEach(l => l.classList.remove("active"));
       summaries.forEach(s => s.classList.remove("active"));
       if (isActive) {
+        activeFilter = null;
         resetAll();
       } else {
+        activeFilter = { type: "discipline", value: link.dataset.disciplines.toLowerCase() };
         link.classList.add("active");
-        filterBy("discipline", link.dataset.disciplines.toLowerCase());
+        filterBy("discipline", activeFilter.value);
       }
       allDetails.forEach(d => d.open = false);
     });
@@ -51,10 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomLinks.forEach(l => l.classList.remove("active"));
       summaries.forEach(s => s.classList.remove("active"));
       if (isActive) {
+        activeFilter = null;
         resetAll();
       } else {
+        activeFilter = { type: "movement", value: link.dataset.movements.toLowerCase() };
         link.classList.add("active");
-        filterBy("movement", link.dataset.movements.toLowerCase());
+        filterBy("movement", activeFilter.value);
       }
       allDetails.forEach(d => d.open = false);
     });
@@ -65,14 +81,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const artistId = summary.closest(".artist").dataset.artist;
       const isActive = summary.classList.contains("active");
       summaries.forEach(s => s.classList.remove("active"));
-      topLinks.forEach(l => l.classList.remove("active"));
-      bottomLinks.forEach(l => l.classList.remove("active"));
       if (isActive) {
-        resetAll();
+        if (activeFilter) {
+          filterBy(activeFilter.type, activeFilter.value);
+          if (activeFilter.type === "discipline") {
+            topLinks.forEach(l => {
+              if (l.dataset.disciplines.toLowerCase() === activeFilter.value) l.classList.add("active");
+            });
+          } else {
+            bottomLinks.forEach(l => {
+              if (l.dataset.movements.toLowerCase() === activeFilter.value) l.classList.add("active");
+            });
+          }
+        } else {
+          resetAll();
+        }
+      
       } else {
-        summary.classList.add("active");
-        filterByArtist(artistId);
-      }
+  summary.classList.add("active");
+  filterByArtist(artistId);
+  setTimeout(() => {
+    summary.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, 50);
+}
     });
   });
 
@@ -85,5 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 });

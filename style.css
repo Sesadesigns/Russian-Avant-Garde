@@ -64,7 +64,10 @@ h1{
     background-color: navy;
     font-size: clamp(30px, 5vw, 50px);
     text-align: center;
+}
 
+h1 {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
