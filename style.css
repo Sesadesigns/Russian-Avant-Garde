@@ -7,13 +7,13 @@ body {
     font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color:ivory;
-    color: navy;
+    background-color:ghostwhite;
+    color: mediumblue;
     text-decoration: none;
     list-style-type: none;
 }
 .landing-container {
-    background-color: navy;
+    background-color: mediumblue;
   min-height: calc(100vh - 60px);
   padding: 0px 20px;
   text-align: center;
@@ -27,16 +27,16 @@ body {
   max-width: 700px;
 }
 .landing-description {
-    color: ivory;
+    color: ghostwhite;
     font-size: clamp(13px, 1.8vw, 20px);
   line-height: 1.5;
 }
 .enter-btn {
     display: inline-block;
     padding: 12px 36px;
-    background-color: navy;
-    border: 1px solid ivory;
-    color: ivory;
+    background-color: mediumblue;
+    border: 1px solid aliceblue;
+    color: ghostwhite;
     text-decoration: none;
     text-transform: uppercase;
     font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -45,8 +45,8 @@ body {
 }
 
 .enter-btn:hover {
-    background-color: ivory;
-    color: navy;
+    background-color: ghostwhite;
+    color: mediumblue;
 }
 
 
@@ -55,13 +55,13 @@ header {
     padding: 0px;  
     display: block;
     flex-shrink: inherit;
-    color: ivory;   
-    background-color: navy;
+    color: ghostwhite;   
+    background-color: mediumblue;
 }
 h1{
    text-transform: uppercase;  
-    color: ivory;   
-    background-color: navy;
+    color: ghostwhite;   
+    background-color: mediumblue;
     font-size: clamp(30px, 5vw, 50px);
     text-align: center;
 }
@@ -103,7 +103,7 @@ h1 {
   .nav-horizontal li {
     flex: 1 1 auto;
     border-right: none;
-    border-bottom: 1px solid navy;
+    border-bottom: 1px solid mediumblue;
   }
 
   .nav-horizontal li:last-child {
@@ -131,27 +131,14 @@ h1 {
   .artist p {
     font-size: clamp(13px, 3vw, 15px);
     padding: 10px 0px;
-    color: navy;
+    color: mediumblue;
   }
-  /*
-  .artists {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.4);
-  max-height: calc((100vh - var(--ui-height)) * 0.4);
-  }
-  */
   
   .artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /*
-  .artworks {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.6);
-  max-height: calc((100vh - var(--ui-height)) * 0.6);
-  }
-  */
+  
   .main-container {
     flex-direction: column;
     height: 600px;
@@ -176,7 +163,7 @@ h1 {
 }
 
 .nav-horizontal li {
-    border-right: 1px solid navy;
+    border-right: 1px solid mediumblue;
     flex: 1;
 }
 
@@ -189,33 +176,33 @@ h1 {
     padding: 15px 5px;
     text-decoration: none;
     line-height: 10px;
-    color: navy;
+    color: mediumblue;
     text-align: center;
 }
 
 .nav-horizontal li a:hover {
-    background-color: navy;
-    color: ivory;
+    background-color: mediumblue;
+    color: ghostwhite;
 }
 
 .nav-horizontal li a.active {
-    background-color: navy;
-    color: ivory;
+    background-color: mediumblue;
+    color: ghostwhite;
 }
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: ivory;
+    background-color: ghostwhite;
 }
 .disciplines a{
-    color: navy;
+    color: mediumblue;
     list-style-type: none;
 }
 
 .Movements a{
-    color: navy;
+    color: mediumblue;
     list-style-type: none;
 }
 
@@ -269,7 +256,7 @@ details summary::-webkit-details-marker {
 .artist p {
 font-size: clamp(12px, 1.8vw, 20px);
   padding: 0px 0px;
-  color: navy;}
+  color: mediumblue;}
 
 details summary::-webkit-details-marker {
     display: none;
@@ -289,10 +276,10 @@ padding: 5px;
 }
 
 .divider {
-    border-top: 1px solid navy 
+    border-top: 1px solid mediumblue 
 }
 .divider1 {
-    border-top: 1px solid navy 
+    border-top: 1px solid mediumblue 
     
 }
 
