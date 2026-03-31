@@ -70,6 +70,8 @@ h1 {
   cursor: pointer;
 }
 
+
+
 @media (max-width: 768px) {
   h1 {
     font-size: clamp(14px, 5vw, 24px);
@@ -283,8 +285,7 @@ padding: 5px;
 #artwork-grid img {
     width: 100%;
     height: auto;
-    
-
+  cursor: pointer;
 }
 
 .divider {
