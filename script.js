@@ -34,15 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-  document.querySelector("h1").addEventListener("click", () => {
-  activeFilter = null;
-  resetAll();
-  topLinks.forEach(l => l.classList.remove("active"));
-  bottomLinks.forEach(l => l.classList.remove("active"));
-  summaries.forEach(s => s.classList.remove("active"));
-  allDetails.forEach(d => d.open = false);
-});
-
   function resetAll() {
     artworks.forEach(img => img.style.display = "block");
     artists.forEach(a => a.style.display = "block");
@@ -64,6 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.display = img.dataset.artist === artistId ? "block" : "none";
     });
   }
+
+
+    document.querySelector("h1").addEventListener("click", () => {
+  activeFilter = null;
+  resetAll();
+  topLinks.forEach(l => l.classList.remove("active"));
+  bottomLinks.forEach(l => l.classList.remove("active"));
+  summaries.forEach(s => s.classList.remove("active"));
+  allDetails.forEach(d => d.open = false);
+});
+
 
   topLinks.forEach(link => {
     link.addEventListener("click", e => {
