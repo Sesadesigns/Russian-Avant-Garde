@@ -117,36 +117,32 @@ h1 {
   .nav-bottom li {
     flex: 1 1 14%;
   }
+  
 
   .artist summary {
+    cursor: pointer;
     font-size: clamp(15px, 3vw, 16px);
+    font-weight: 600;
+    padding: 10px 0;
+    text-transform: uppercase;
+    list-style-type: none;
   }
 
   .artist p {
     font-size: clamp(13px, 3vw, 15px);
     padding: 10px 0px;
+    color: mediumblue;
   }
-
+  
   #artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  
   .main-container {
     flex-direction: column;
-    height: calc(100vh - var(--ui-height));
-    overflow: hidden;
-  }
-
-  .artists {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.4);
-    max-height: calc((100vh - var(--ui-height)) * 0.4);
-  }
-
-  .artworks {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.6);
-    max-height: calc((100vh - var(--ui-height)) * 0.6);
+    height: 600px;
+    overflow: none;
   }
 }
 
@@ -287,3 +283,22 @@ padding: 5px;
     
 }
 
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: 600px;
+    overflow: none;
+  }
+
+  .artists {
+    width: 100%;
+    height: calc((100vh - var(--ui-height)) * 0.4);
+  max-height: calc((100vh - var(--ui-height)) * 0.4);
+  }
+
+  .artworks {
+    width: 100%;
+    height: calc((100vh - var(--ui-height)) * 0.6);
+  max-height: calc((100vh - var(--ui-height)) * 0.6);
+  }
+}
