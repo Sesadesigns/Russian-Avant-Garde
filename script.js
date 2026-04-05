@@ -72,6 +72,7 @@ artworks.forEach(img => {
       e.preventDefault();
       const isActive = link.classList.contains("active");
       topLinks.forEach(l => l.classList.remove("active"));
+      bottomLinks.forEach(l => l.classList.remove("active"));
       summaries.forEach(s => s.classList.remove("active"));
       if (isActive) {
         activeFilter = null;
@@ -90,6 +91,7 @@ artworks.forEach(img => {
       e.preventDefault();
       const isActive = link.classList.contains("active");
       bottomLinks.forEach(l => l.classList.remove("active"));
+      topLinks.forEach(l => l.classList.remove("active"));
       summaries.forEach(s => s.classList.remove("active"));
       if (isActive) {
         activeFilter = null;
@@ -127,8 +129,10 @@ artworks.forEach(img => {
       } else {
   summary.classList.add("active");
   filterByArtist(artistId);
+  const artistEl = summary.closest(".artist");
+  const container = document.querySelector(".artists");
   setTimeout(() => {
-    summary.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    container.scrollTop = artistEl.offsetTop - 115;
   }, 50);
 }
     });
