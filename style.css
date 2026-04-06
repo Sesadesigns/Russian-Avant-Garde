@@ -1,20 +1,20 @@
 html, body {
-height: 100%;
-margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color:ghostwhite;
-    color: mediumblue;
-    text-decoration: none;
-    list-style-type: none;
+  font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: ghostwhite;
+  color: mediumblue;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .landing-container {
-    background-color: mediumblue;
+  background-color: mediumblue;
   min-height: calc(100vh - 60px);
   padding: 0px 20px;
   display: flex;
@@ -43,8 +43,8 @@ body {
   color: ghostwhite;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: (30px);
+  font-family: monospace;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -64,6 +64,16 @@ header {
   background-color: mediumblue;
 }
 
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: clamp(10px, 2.5vw, 50px);
+  text-transform: uppercase;
+  color: ghostwhite;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .header-btn {
   font-family: monospace;
   font-size: clamp(8px, 1vw, 14px);
@@ -78,27 +88,9 @@ header {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-  margin: 0;
-  font-size: clamp(10px, 2.5vw, 50px);
-  text-transform: uppercase;
-  color: ghostwhite;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
 .header-btn:hover {
   background: ghostwhite;
   color: mediumblue;
-}
-
-.header-btn-left {
-  left: 20px;
-}
-
-.header-btn-right { 
-  right: 20px; 
 }
 
 .hamburger-btn {
@@ -139,31 +131,23 @@ h1 {
   text-transform: uppercase;
   font-family: monospace;
   font-size: 14px;
-  border-bottom: 1px solid mediumblue;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.hamburger-menu a:last-child { 
-  border-bottom: none; 
+.hamburger-menu a:last-child {
+  border-bottom: none;
 }
 
-.hamburger-menu a:hover { 
-  background: ghostwhite; 
-  color: mediumblue; 
-  border: 1px; 
-  border-color: mediumblue;
+.hamburger-menu a:hover {
+  background: ghostwhite;
+  color: mediumblue;
 }
 
-.hamburger-menu.open { 
-  display: block; 
+.hamburger-menu.open {
+  display: block;
 }
 
 @media (max-width: 1024px) {
-  h1 {
-    font-size: clamp(14px, 5vw, 20px);
-    padding: 5px 10px;
-    line-height: 1.2;
-  }
-
   .header-btn {
     display: none;
   }
@@ -171,25 +155,15 @@ h1 {
   .hamburger-btn {
     display: flex;
   }
+}
 
-  .main-container {
-    flex-direction: column;
-    height: 600px;
-    overflow: none;
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(14px, 5vw, 24px);
+    padding: 5px 10px;
+    line-height: 1.2;
   }
 
-  .artists {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.4);
-    max-height: calc((100vh - var(--ui-height)) * 0.4);
-  }
-
-  .artworks {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.6);
-    max-height: calc((100vh - var(--ui-height)) * 0.6);
-  }
-  
   .landing-container {
     padding: 20px;
     justify-content: flex-start;
@@ -218,8 +192,8 @@ h1 {
   }
 
   .nav-horizontal li:last-child {
-    border-bottom: none;
     border-right: none;
+    border-bottom: none;
   }
 
   .nav-top li {
@@ -229,70 +203,37 @@ h1 {
   .nav-bottom li {
     flex: 1 1 14%;
   }
-  
 
   .artist summary {
-    cursor: pointer;
     font-size: clamp(15px, 3vw, 16px);
-    font-weight: 600;
-    padding: 10px 0;
-    text-transform: uppercase;
-    list-style-type: none;
   }
 
   .artist p {
     font-size: clamp(13px, 3vw, 15px);
     padding: 10px 0px;
-    color: mediumblue;
   }
-  
+
   #artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  
-  .main-container {
-    flex-direction: column;
-    height: 600px;
-    overflow: none;
-  }
-
-  .main-container {
-    flex-direction: column;
-    height: 600px;
-    overflow: none;
-  }
-
-  .artists {
+  .overview-canvas-wrap {
     width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.4);
-  max-height: calc((100vh - var(--ui-height)) * 0.4);
-  }
-
-  .artworks {
-    width: 100%;
-    height: calc((100vh - var(--ui-height)) * 0.6);
-  max-height: calc((100vh - var(--ui-height)) * 0.6);
+    height: 260px;
   }
 }
 
-
-
-
 .nav-horizontal {
   font-size: clamp(12px, 1.5vw, 20px);
-  text-transform: uppercase;   
-  line-height: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  list-style-type: none;
-  border-width: 2px;
-  padding: 10px 0px;
+  text-transform: uppercase;
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .nav-horizontal li {
@@ -311,17 +252,15 @@ h1 {
   line-height: 10px;
   color: mediumblue;
   text-align: center;
+  white-space: nowrap;
 }
 
-.nav-horizontal li a:hover {
-  background-color: mediumblue;
-  color: ghostwhite;
-}
-
+.nav-horizontal li a:hover,
 .nav-horizontal li a.active {
   background-color: mediumblue;
   color: ghostwhite;
 }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -330,12 +269,12 @@ footer {
   background-color: ghostwhite;
 }
 
-.disciplines a{
+.disciplines a {
   color: mediumblue;
   list-style-type: none;
 }
 
-.Movements a{
+.Movements a {
   color: mediumblue;
   list-style-type: none;
 }
@@ -374,6 +313,9 @@ details summary {
   cursor: pointer;
 }
 
+details summary::-webkit-details-marker {
+  display: none;
+}
 
 .artist summary {
   cursor: pointer;
@@ -387,10 +329,7 @@ details summary {
 .artist p {
   font-size: clamp(12px, 1.8vw, 20px);
   padding: 0px 0px;
-  color: mediumblue;}
-
-details summary::-webkit-details-marker {
-  display: none;
+  color: mediumblue;
 }
 
 #artwork-grid {
@@ -407,31 +346,11 @@ details summary::-webkit-details-marker {
 }
 
 .divider {
-  border-top: 1px solid mediumblue 
+  border-top: 1px solid mediumblue;
 }
 
 .divider1 {
-  border-top: 1px solid mediumblue   
-}
-
-
-.overview-btn {
-  position: absolute;
-  top: 5%;
-  right: 120px; 
-  transform: translateY(-50%);
-  font-family: monospace;
-  font-size: clamp(10px, 1.5vw, 14px);
-  text-transform: uppercase;
-  color: ghostwhite;
-  padding: 10px 14px;
-  text-decoration: none;
-  border: 1px solid ghostwhite;
-}
-
-.overview-btn:hover {
-  background: ghostwhite;
-  color: mediumblue;
+  border-top: 1px solid mediumblue;
 }
 
 .overview-container {
@@ -484,4 +403,26 @@ details summary::-webkit-details-marker {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: 600px;
+    overflow: none;
+  }
+
+  .artists {
+    width: 100%;
+    height: calc((100vh - var(--ui-height)) * 0.4);
+  max-height: calc((100vh - var(--ui-height)) * 0.4);
+  }
+
+  .artworks {
+    width: 100%;
+    height: calc((100vh - var(--ui-height)) * 0.6);
+  max-height: calc((100vh - var(--ui-height)) * 0.6);
+  }
 }
