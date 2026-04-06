@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Overview — Russian Avant Garde Library</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+<header>
+  <div style="flex:1; display:flex; justify-content:flex-start; align-items:center;">
+    <a href="index.html" class="header-btn">Welcome</a>
+  </div>
+  <h1>Russian Avant Garde Library</h1>
+  <div style="flex:1; display:flex; justify-content:flex-end; align-items:center;">
+    <a href="main.html" class="header-btn">Library</a>
+  </div>
+  <button class="hamburger-btn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <a href="index.html">Welcome</a>
+    <a href="main.html">Library</a>
+  </div>
+</header>
+
+  <div class="divider"></div>
+
+  <nav>
+    <ul class="nav-horizontal nav-top">
+      <li><a href="#" class="active" onclick="show('movement', this)">Movements</a></li>
+      <li><a href="#" onclick="show('discipline', this)">Disciplines</a></li>
+      <li><a href="#" onclick="show('decade', this)">Decades</a></li>
+      <li><a href="#" onclick="show('gender', this)">Gender</a></li>
+      <li><a href="#" onclick="show('country', this)">Countries</a></li>
+    </ul>
+  </nav>
+
+  <div class="divider"></div>
+
+  <main class="overview-container">
+    <h2 class="overview-title" id="chartTitle">Movement Breakdown</h2>
+    <div class="overview-chart-wrap">
+      <div class="overview-canvas-wrap">
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script>
+    const shades = ['#0000CD','#1a1aff','#3333ff','#4d4dff','#6666ff','#8080ff','#9999ff','#b3b3ff','#ccccff','#e6e6ff'];
+
+    const datasets = {
+      movement: {
+        title: 'Movement Breakdown',
+        labels: ['Constructivism','Suprematism','Cubo-Futurism','Futurism','Theatre','Rayonism','Abstract'],
+        data: [10,7,6,5,5,3,1]
+      },
+      discipline: {
+        title: 'Discipline Breakdown',
+        labels: ['Painting','Graphic Design','Sculpture','Literature','Architecture'],
+        data: [11,4,4,2,1]
+      },
+      decade: {
+        title: 'Decade of Birth',
+        labels: ['1860s','1880s','1890s'],
+        data: [1,11,6]
+      },
+      gender: {
+        title: 'Gender Split',
+        labels: ['Male','Female'],
+        data: [13,6]
+      },
+      country: {
+        title: 'Country of Birth',
+        labels: ['Russia','Ukraine','Latvia','Finland','Belarus'],
+        data: [10,4,1,1,1]
+      }
+    };
+
+    let chart;
+
+    function buildLegend(labels, data, colors) {
+      const total = data.reduce((a,b) => a+b, 0);
+      document.getElementById('legend').innerHTML = labels.map((l,i) => `
+        <div class="legend-item">
+          <div class="legend-dot" style="background:${colors[i]}"></div>
+          <span>${l} — ${data[i]} (${Math.round(data[i]/total*100)}%)</span>
+        </div>
+      `).join('');
+    }
+
+    function show(key, el) {
+      event.preventDefault();
+      document.querySelectorAll('.nav-top a').forEach(a => a.classList.remove('active'));
+      if (el) el.classList.add('active');
+      const d = datasets[key];
+      document.getElementById('chartTitle').textContent = d.title;
+      const colors = shades.slice(0, d.data.length);
+      if (chart) chart.destroy();
+      chart = new Chart(document.getElementById('pieChart'), {
+        type: 'pie',
+        data: {
+          labels: d.labels,
+          datasets: [{
+            data: d.data,
+            backgroundColor: colors,
+            borderColor: 'ghostwhite',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { animateRotate: true, duration: 1200 },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}` }
+            }
+          }
+        }
+      });
+      buildLegend(d.labels, d.data, colors);
+    }
+
+window.addEventListener('load', function() {
+  show('movement', document.querySelector('.nav-top a'));
+});
+  </script>
+
+  <script>
+    function updateHeights() {
+      const header = document.querySelector('header');
+      const topNav = document.querySelector('.nav-top');
+      const bottomNav = document.querySelector('.nav-bottom');
+      const headerH = header ? header.offsetHeight : 0;
+      const topNavH = topNav ? topNav.offsetHeight : 0;
+      const bottomNavH = bottomNav ? bottomNav.offsetHeight : 0;
+      document.documentElement.style.setProperty('--ui-height', (headerH + topNavH + bottomNavH) + 'px');
+    }
+    updateHeights();
+    window.addEventListener('resize', updateHeights);
+  </script>
+    <script>
+  function toggleMenu() {
+    document.getElementById('hamburgerMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('hamburgerMenu');
+    const btn = document.querySelector('.hamburger-btn');
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>

@@ -6,10 +6,24 @@
     <title>Russian Avant Garde Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1 style="text-align: center;">Russian Avant Garde Library</h1>
-    </header>
+  <div style="flex:1; display:flex; justify-content:flex-start;">
+    <a href="index.html" class="header-btn">Welcome</a>
+  </div>
+  <h1>Russian Avant Garde Library</h1>
+  <div style="flex:1; display:flex; justify-content:flex-end;">
+    <a href="overview.html" class="header-btn">Overview</a>
+  </div>
+  <button class="hamburger-btn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <a href="index.html">Welcome</a>
+    <a href="overview.html">Overview</a>
+  </div>
+</header>
     
     <div class="divider"></div>
     
@@ -509,6 +523,19 @@
 
   updateHeights();
   window.addEventListener('resize', updateHeights);
+  
+</script>
+<script>
+  function toggleMenu() {
+    document.getElementById('hamburgerMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('hamburgerMenu');
+    const btn = document.querySelector('.hamburger-btn');
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
 </script>
 </body>
 </html>
