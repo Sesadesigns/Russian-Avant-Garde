@@ -2,151 +2,158 @@ html, body {
   height: 100%;
   margin: 0;
 }
+/*NON-CHANGABLE ASSETS*/
 
-body {
-  font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  background-color: ghostwhite;
-  color: mediumblue;
-  text-decoration: none;
-  list-style-type: none;
-}
+  body {
+    font-family: monospace, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: ghostwhite;
+    color: mediumblue;
+    text-decoration: none;
+    list-style-type: none;
+  }
 
-.landing-container {
-  background-color: mediumblue;
-  min-height: calc(100vh - 60px);
-  padding: 0px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+  header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    flex-shrink: 0;
+    color: ghostwhite;
+    background-color: mediumblue;
+  }
 
-.landing-text {
-  width: 50%;
-  max-width: 700px;
-}
+  h1 {
+    text-align: center;
+    margin: 0;
+    font-size: clamp(10px, 2.5vw, 50px);
+    text-transform: uppercase;
+    color: ghostwhite;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+/*HEADER*/
+  .header-btn {
+    font-family: monospace;
+    font-size: clamp(8px, 1vw, 14px);
+    text-transform: uppercase;
+    color: ghostwhite;
+    text-decoration: none;
+    border: 1px solid ghostwhite;
+    padding: 6px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+  }
 
-.landing-description {
-  color: ghostwhite;
-  font-size: clamp(13px, 1.8vw, 20px);
-  line-height: 1.5;
-  text-align: justify;
-}
+  .header-btn:hover {
+    background: ghostwhite;
+    color: mediumblue;
+  }
+/*HAMBURGER MENU BUTTON*/
+  .hamburger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: absolute;
+    right: 16px;
+    transition: background 0.2s, color 0.2s;
+  }
 
-.enter-btn {
-  display: inline-block;
-  padding: 12px 36px;
-  background-color: mediumblue;
-  border: 1px solid aliceblue;
-  color: ghostwhite;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: monospace;
-  font-size: 14px;
-  cursor: pointer;
-}
+  .hamburger-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: ghostwhite;
+  }
 
-.enter-btn:hover {
-  background-color: ghostwhite;
-  color: mediumblue;
-}
+  .hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: mediumblue;
+    border-top: 1px solid ghostwhite;
+    width: 100%;
+    z-index: 100;
+    transition: background 0.2s, color 0.2s;
+  }
 
-header {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 20px;
-  flex-shrink: 0;
-  color: ghostwhite;
-  background-color: mediumblue;
-}
+  .hamburger-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: ghostwhite;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
 
-h1 {
-  text-align: center;
-  margin: 0;
-  font-size: clamp(10px, 2.5vw, 50px);
-  text-transform: uppercase;
-  color: ghostwhite;
-  cursor: pointer;
-  white-space: nowrap;
-}
+  .hamburger-menu a:last-child {
+    border-bottom: none;
+  }
 
-.header-btn {
-  font-family: monospace;
-  font-size: clamp(8px, 1vw, 14px);
-  text-transform: uppercase;
-  color: ghostwhite;
-  text-decoration: none;
-  border: 1px solid ghostwhite;
-  padding: 6px 10px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  width: 80px;
-  text-align: center;
-}
+  .hamburger-menu a:hover {
+    background: ghostwhite;
+    color: mediumblue;
+  }
 
-.header-btn:hover {
-  background: ghostwhite;
-  color: mediumblue;
-}
+  .hamburger-menu.open {
+    display: block;
+  }
 
-.hamburger-btn {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  position: absolute;
-  right: 16px;
-}
+/*LANDING PAGE*/
+  .landing-container {
+    background-color: mediumblue;
+    min-height: calc(100vh - 60px);
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  } 
 
-.hamburger-btn span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: ghostwhite;
-}
+  .landing-text {
+    width: 50%;
+    max-width: 700px;
+  }
 
-.hamburger-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: mediumblue;
-  border-top: 1px solid ghostwhite;
-  width: 100%;
-  z-index: 100;
-}
+  .landing-description {
+    color: ghostwhite;
+    font-size: clamp(13px, 1.8vw, 20px);
+    line-height: 1.5;
+    text-align: justify;
+  }
 
-.hamburger-menu a {
-  display: block;
-  padding: 12px 20px;
-  color: ghostwhite;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: monospace;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+  .enter-btn {
+    display: inline-block;
+    padding: 12px 36px;
+    background-color: mediumblue;
+    border: 1px solid aliceblue;
+    color: ghostwhite;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
 
-.hamburger-menu a:last-child {
-  border-bottom: none;
-}
+  .enter-btn:hover {
+    background-color: ghostwhite;
+    color: mediumblue;
+  }
 
-.hamburger-menu a:hover {
-  background: ghostwhite;
-  color: mediumblue;
-}
-
-.hamburger-menu.open {
-  display: block;
-}
-
+/*MOBILE VERSION FOR HEADER + HAMBURGER MENU*/
 @media (max-width: 1024px) {
   .header-btn {
     display: none;
@@ -154,16 +161,19 @@ h1 {
 
   .hamburger-btn {
     display: flex;
+    transition: background 0.2s, color 0.2s;
   }
 }
 
+/*MOBILE VERISON FOR THE WEBSITE*/
 @media (max-width: 768px) {
+  
   h1 {
     font-size: clamp(14px, 5vw, 24px);
     padding: 5px 10px;
     line-height: 1.2;
   }
-
+  /*LANDING PAGE*/
   .landing-container {
     padding: 20px;
     justify-content: flex-start;
@@ -173,46 +183,40 @@ h1 {
     width: 100%;
   }
 
-  .nav-horizontal {
-    flex-wrap: wrap;
-    font-size: clamp(15px, 3vw, 20px);
-    white-space: normal;
+  .nav-top{
+    transition: background 0.2s, color 0.2s;
   }
-
-  .nav-horizontal li a {
-    white-space: normal;
-    padding: 10px 5px;
-    line-height: 1.3;
-  }
-
-  .nav-horizontal li {
-    flex: 1 1 auto;
-    border-right: 1px solid mediumblue;
-    border-bottom: 1px solid mediumblue;
-  }
-
-  .nav-horizontal li:last-child {
-    border-right: none;
-    border-bottom: none;
-  }
-
+  /*NAVIGATION TOP*/
   .nav-top li {
     flex: 1 1 20%;
   }
 
-  .nav-bottom li {
-    flex: 1 1 14%;
+  /*NAVIGATION BOTTOM*/
+  .nav-bottom {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: background 0.2s, color 0.2s;
   }
 
+  .nav-bottom li {
+    flex-shrink: 0;
+  }
+  
+  .nav-bottom li a {
+    padding: 15px 20px;
+  }
+
+  /*ARTISTS CONTAINER*/
   .artist summary {
-    font-size: clamp(15px, 3vw, 16px);
+    font-size: clamp(15px, 3vw, 20px);
   }
 
   .artist p {
     font-size: clamp(13px, 3vw, 15px);
-    padding: 10px 0px;
   }
 
+   /*ARTWORKS CONTAINER*/
   #artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -221,8 +225,11 @@ h1 {
     width: 100%;
     height: 260px;
   }
+
+  
 }
 
+ /*NAVIGATIONS*/
 .nav-horizontal {
   font-size: clamp(12px, 1.5vw, 20px);
   text-transform: uppercase;
@@ -234,6 +241,7 @@ h1 {
   justify-content: space-evenly;
   flex-wrap: nowrap;
   width: 100%;
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-horizontal li {
@@ -247,7 +255,7 @@ h1 {
 
 .nav-horizontal li a {
   display: block;
-  padding: 15px 5px;
+  padding: 15px 15px;
   text-decoration: none;
   line-height: 10px;
   color: mediumblue;
@@ -261,6 +269,7 @@ h1 {
   color: ghostwhite;
 }
 
+ /*FOOTER*/
 footer {
   position: fixed;
   bottom: 0;
@@ -269,22 +278,12 @@ footer {
   background-color: ghostwhite;
 }
 
-.disciplines a {
-  color: mediumblue;
-  list-style-type: none;
-}
-
-.Movements a {
-  color: mediumblue;
-  list-style-type: none;
-}
-
+ /*MAIN CONTAINER: CREATES TWO SCROLLABLE CONTAINERS ON THE SAME LEVEL*/
 .main-container {
   height: calc(100vh - var(--ui-height));
   margin-bottom: var(--ui-height);
   display: flex;
-  gap: 10px;
-  padding: 5px;
+  gap: 0px;
   flex: 1;
 }
 
@@ -293,28 +292,22 @@ footer {
   max-height: 100%;
   width: 50%;
   overflow-y: auto;
+  border-right: 1px solid mediumblue;
+  transition: background 0.2s, color 0.2s;
+  
 }
 
-.artists ul, .artists li {
+.artists ul, 
+.artists li {
   list-style: none;
   padding: 0;
   margin: 5px;
 }
 
-.artworks {
-  width: 50%;
-  height: 100%;
-  max-height: 100%;
-  overflow-y: auto;
-}
-
-details summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-details summary::-webkit-details-marker {
-  display: none;
+.artist p {
+  font-size: clamp(12px, 1.8vw, 20px);
+  padding: 0px 0px;
+  color: mediumblue;
 }
 
 .artist summary {
@@ -326,10 +319,11 @@ details summary::-webkit-details-marker {
   list-style-type: none;
 }
 
-.artist p {
-  font-size: clamp(12px, 1.8vw, 20px);
-  padding: 0px 0px;
-  color: mediumblue;
+.artworks {
+  width: 50%;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 #artwork-grid {
@@ -345,6 +339,15 @@ details summary::-webkit-details-marker {
   cursor: pointer;
 }
 
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 .divider {
   border-top: 1px solid mediumblue;
 }
@@ -357,7 +360,6 @@ details summary::-webkit-details-marker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px;
   margin-bottom: var(--ui-height);
 }
 
@@ -426,3 +428,4 @@ details summary::-webkit-details-marker {
   max-height: calc((100vh - var(--ui-height)) * 0.6);
   }
 }
+  
